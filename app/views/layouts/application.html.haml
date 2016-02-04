@@ -1,0 +1,21 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %title Testing Workshop
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1.0", :name => "viewport"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    = render 'layouts/nav'
+
+    %main
+      #main-content.container
+        .section
+          = render 'layouts/messages'
+          - if content_for?(:page_title)
+            %h1= yield :page_title
+        = yield
+    = render 'layouts/footer'

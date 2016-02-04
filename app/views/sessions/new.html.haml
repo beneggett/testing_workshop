@@ -1,0 +1,13 @@
+.row
+  .col.s12
+    %h1 Sign In
+    = simple_form_for :user, url: create_session_path, input_html: {value: (params[:user][:email] if params.has_key?(:user)) }  do |f|
+      = f.input :email, placeholder: "Email address", input_html: { value: "#{params[:user][:email] if params.has_key?(:user) }" }
+      = f.input :password, placeholder: "Super secret password"
+      = f.submit "Sign in", class: 'btn waves-effect waves-light'
+%br
+%br
+.row
+  .col.s12
+    %p
+      = link_to 'Not Registered Yet?', sign_up_path, class: 'btn red waves-effect waves-light'

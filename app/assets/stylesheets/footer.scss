@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  .render-above {
+    position: relative;
+    z-index: 100;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+  a {
+    color: $primary-color;
+  }
+}
+
+.footer-padding {
+  height: 60px;
+}

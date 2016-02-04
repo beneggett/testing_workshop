@@ -1,0 +1,15 @@
+.row
+  .col.s12
+    %h1 Sign Up
+    = simple_form_for @user, url: register_path do |f|
+      = f.input :name, placeholder: "Your name please", input_html: {value: "#{params[:user][:name] if params.has_key?(:user) }" }
+      = f.input :email, placeholder: "Email address", input_html: {value: "#{params[:user][:email] if params.has_key?(:user) }" }
+      = f.input :password, placeholder: "Super secret password"
+      = f.submit "Sign Up", class: 'btn waves-effect waves-light'
+
+%br
+%br
+.row
+  .col.s12
+    %p
+      = link_to 'Already signed up? Sign in!', sign_in_path, class: 'btn red waves-effect waves-light'

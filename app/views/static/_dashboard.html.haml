@@ -1,0 +1,25 @@
+.center-align
+  .row
+    .col.s12.m6
+      %h1 Hi #{current_user.name},
+      %h3 You are a #{current_user.level} with #{pluralize current_user.points, 'point'}
+      %p
+        = image_tag current_user.level_image_url, class: 'responsive-img'
+      %br
+      - if current_user.level == 'bowie'
+        %h4 You are the best! Ziggy #{current_user.legit_name} Stardust in Space!!!
+      - else
+        %h4 Keep working,  #{current_user.legit_name}
+        = link_to "Level up a bit!", '#', class: 'btn'
+    .col.s12.m6
+      %h3 Activities
+      %table.centered.responsive-table.highlight
+        %thead
+          %tr
+            %th{"data-field" => "id"} Activity
+            %th{"data-field" => "name"} Complete?
+        %tbody
+          - current_user.user_activities.order(:created_at).each do |ua|
+            %tr
+              %td= ua.activity.name
+              %td= complete_activity_link(ua)

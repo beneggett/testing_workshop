@@ -1,0 +1,12 @@
+%nav{:role => "navigation"}
+  .nav-wrapper.container
+    = link_to root_path, class: 'logo-container brand-logo' do
+      -# .valign-wrapper
+      %i.fa.fa-codiepie
+      %span Testing Workshop
+    %ul.right.hide-on-med-and-down
+      = render 'layouts/nav_links'
+    %ul#nav-mobile.side-nav
+      = render 'layouts/nav_links'
+    %a.button-collapse{"data-activates" => "nav-mobile", :href => "#"}
+      %i.fa.fa-bars
