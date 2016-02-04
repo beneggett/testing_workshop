@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :name, presence: true
   validates :password, presence: true, on: :create
+
   after_create :generate_user_activities
+
   has_many :user_activities, dependent: :destroy
   has_many :activities, through: :user_activities
 

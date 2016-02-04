@@ -50,6 +50,7 @@ group :development, :test do
   gem 'byebug'
   gem 'jazz_fingers'
   gem 'factory_girl_rails'
+  gem "pry-rails"
 end
 
 group :development do
@@ -83,13 +84,14 @@ end
 
 group :test do
   gem 'minitest-focus'
+  gem 'minitest-reporters'
   gem 'coveralls', require: false
   gem 'simplecov', require: false
-  gem 'minitest-reporters'
 
-  gem "codeclimate-test-reporter", require: nil
   gem 'vcr' # because more vcrs
   gem 'webmock'
+
+  gem "codeclimate-test-reporter", require: nil
 
   gem 'minitest-rails-capybara'
   gem 'launchy'
