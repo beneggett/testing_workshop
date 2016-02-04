@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: testing_workshop_development
+
+test:
+  <<: *default
+  database: testing_workshop_test
+
+production:
+  <<: *default
+  database: testing_workshop_production
+  username: testing_workshop
+  password: <%= ENV['TESTING_WORKSHOP_DATABASE_PASSWORD'] %>
