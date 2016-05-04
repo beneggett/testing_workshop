@@ -24,3 +24,11 @@ We'll focus on testing:
 
 Additionally, I will touch briefly on organizing your code in a smart way so you avoid overtesting, talk about what not to test, and touch on some helpful testing tools along the way.
 
+## Getting started
+
+* Create a config/database.yml file for your machine like in config/database-sample.yml
+
+* Create a config/application.yml file for your machine like in config/application-sample.yml *This is only used for Giphy API key*
+
+* Run bundle, rake db:create, rake db:migrate per usual
+

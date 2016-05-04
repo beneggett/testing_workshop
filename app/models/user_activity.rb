@@ -3,7 +3,7 @@ class UserActivity < ActiveRecord::Base
   belongs_to :activity
   belongs_to :user
 
-  after_save :reflect_score
+  after_update :reflect_score
 
   def point_value
     5
