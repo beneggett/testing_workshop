@@ -2,6 +2,8 @@
 
  It will be aimed at more intermediate to advanced topics. I'll introduce you to my basic workflow of testing code with MiniTest and some other tips and tricks along the way.
 
+Testing workshop recording available at: https://www.youtube.com/watch?v=9w8QRDZy9Kw
+
 We'll focus on testing:
 
 • Models
